@@ -19,28 +19,27 @@
     </dependency> 
      
      <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
-	<dependency>
-    	<groupId>javax</groupId>
-    	<artifactId>javaee-api</artifactId>
-   		 <version>8.0</version>
-    	<scope>provided</scope>
-	</dependency> 
+		<dependency>
+    		<groupId>javax</groupId>
+    		<artifactId>javaee-api</artifactId>
+   		 	<version>8.0</version>
+    		<scope>provided</scope>
+		</dependency>  
+	<!--  -->
 	
+	<!-- SPRING DEPENDENCY -->
+		<dependency>
+   			<groupId>org.springframework</groupId>
+    		<artifactId>spring-core</artifactId>
+    		<version>4.3.6.RELEASE</version>
+		</dependency>  
 	
-	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
-	<dependency>
-   		<groupId>org.springframework</groupId>
-    	<artifactId>spring-core</artifactId>
-    	<version>4.3.6.RELEASE</version>
-	</dependency>  
-	
-	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-	<dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-webmvc</artifactId>
-    	<version>4.3.6.RELEASE</version>
-	</dependency>
-	
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-webmvc</artifactId>
+    		<version>4.3.6.RELEASE</version>
+		</dependency>
+	<!--  -->
 	
 	<!-- JSTL -->
 		<dependency>
@@ -48,10 +47,10 @@
     		<artifactId>jstl</artifactId>
     		<version>1.2</version>
 		</dependency>
+	<!--  -->
 	
-	
-     
- </dependencies>
+</dependencies>
+ 	 
  	 <build>
   		<plugins>
   			<!-- UPDATE TO LATEST VERSION -->
@@ -64,7 +63,8 @@
         		</configuration>
      		</plugin>
   		</plugins>
-  
-    <finalName>onlineshopping</finalName>
+  	<finalName>onlineshopping</finalName>
   </build>
+
+
 </project>
