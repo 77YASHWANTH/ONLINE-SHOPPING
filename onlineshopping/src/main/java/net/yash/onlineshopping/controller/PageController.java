@@ -13,11 +13,48 @@ public class PageController {
 	public ModelAndView index(){
 		
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","spring project is on process");
+		mv.addObject("title","HOME");
+		mv.addObject("userClickHome",true);
 		return mv;
 	} 
 	
+	@RequestMapping(value = {"/about"})
+	public ModelAndView about(){
+		
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","about");
+		mv.addObject("userClickAbout",true);
+		return mv;
+	} 
 	
+	@RequestMapping(value = {"/services"})
+	public ModelAndView services(){
+	
+	ModelAndView mv = new ModelAndView("page");
+	mv.addObject("title","SERVICES");
+	mv.addObject("userClickServices",true);
+	return mv;
+	} 
+	
+	@RequestMapping(value = {"/contact"})
+	public ModelAndView contact(){
+		
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","CONTACT");
+		mv.addObject("userClickContact",true);
+		return mv;
+	} 
+	
+	@RequestMapping(value = {"/viewproduct"})
+	public ModelAndView viewproduct(){
+		
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","VIEW PRODUCT");
+		mv.addObject("userClickViewProduct",true);
+		return mv;
+	} 
+	
+
 /*	//Request param  .... onlineshopping/test?greeting=process is success
 	@RequestMapping(value="/test")
 	public ModelAndView test(@RequestParam(value="greeting",required=false)String greeting){
