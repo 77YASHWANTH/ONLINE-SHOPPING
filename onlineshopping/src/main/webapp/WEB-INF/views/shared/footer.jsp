@@ -1,4 +1,4 @@
- <div class="container">
+ <div class="container footer">
 
         <hr>
 
@@ -11,4 +11,4 @@
             </div>
         </footer>
 
-    </div>
+    </div>  
