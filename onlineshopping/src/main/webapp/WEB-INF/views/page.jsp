@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>ESHOP</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -46,9 +46,23 @@
     	
     	
     <!-- Page Content -->
-    
+    	
+    	<!-- Home  Content -->
+    	<c:if test="${userClickHome == true}">
    		<%@include file="home.jsp"%> 
+   		</c:if>
    		
+       
+       <c:if test="${userClickAbout == true}">
+   		<%@include file="about.jsp"%> 
+   		</c:if>
+   		
+       
+        <c:if test="${userClickContact == true}">
+   		<%@include file="contact.jsp"%> 
+   		</c:if>
+   		
+       
        <!-- /.container -->
 	
 	<!-- Footer -->
