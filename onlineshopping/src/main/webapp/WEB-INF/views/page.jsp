@@ -12,64 +12,56 @@
 
 
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="ISO-8859-1">
-		<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    	<meta name="description" content="">
-    	<meta name="author" content="">
+<html lang="en">
 
-    	<title>ONLINE SHOPPING ${title}</title>
+<head>
 
-    	<!-- Bootstrap core CSS -->
-    	<link href="${css}/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    	<!-- Custom styles for this template -->
-    	<link href="${css}/myapp.css" rel="stylesheet">
+    <title>Shop Homepage - Start Bootstrap Template</title>
 
-  
+    <!-- Bootstrap Core CSS -->
+    <link href="${css}/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="${css}/myapp.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-		
 
     <!-- Navigation -->
-   
-   <%@ include file="./shared/navigation.jsp" %>
-   
-   <!-- home content -->
-    <c:if test="${userClickHome == true}">
- 	<%@ include file="home.jsp" %> 
-    </c:if>
+    	<%@include file="./shared/navigation.jsp"  %> 
+    	
+    	
+    <!-- Page Content -->
     
-    
-    <!-- WHEN ABOUT IS CLICKED -->
-     <c:if test="${userClickAbout == true}">
- 	<%@ include file="about.jsp" %> 
-    </c:if>
-    
-     <!-- WHEN SERVICES IS CLICKED -->
-     <c:if test="${userClickServices == true}">
- 	<%@ include file="services.jsp" %> 
-    </c:if>
-    
-     <!-- WHEN CONTACT IS CLICKED -->
-     <c:if test="${userClickContact == true}">
- 	<%@ include file="about.jsp" %> 
-    </c:if>
-    
-    
-    
-    
-    <!-- Footer -->
-   		<%@ include file="./shared/footer.jsp" %>
+   		<%@include file="home.jsp"%> 
    		
-   		
-   		
-    <!-- Bootstrap core JavaScript -->
-    <script src="${js}/jquery.min.js"></script>
+       <!-- /.container -->
+	
+	<!-- Footer -->
+	<%@include file="./shared/footer.jsp" %>
+       
+     <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="${js}/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
     <script src="${js}/bootstrap.min.js"></script>
 
-  
 </body>
+
 </html>
