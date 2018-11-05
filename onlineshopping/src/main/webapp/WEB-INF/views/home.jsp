@@ -3,13 +3,10 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">Shop-Here</p>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
-                </div>
-            </div>
+             	
+             	<%@include file="./shared/sidebar.jsp" %>
+             
+          	</div>
 
             <div class="col-md-9">
 

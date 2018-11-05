@@ -8,15 +8,27 @@
   <name>onlineshopping Maven Webapp</name>
   <url>http://maven.apache.org</url> 
   
-  <properties><javaee.version>8.0</javaee.version></properties>
+  <properties>
+  		<javaee.version>8.0</javaee.version>
+  		<spring.versions>4.3.6.RELEASE</spring.versions>
+  	</properties>
   <dependencies>
   
+  	<!-- LINKING BACKEND -->
+  	<dependency>
+  		<groupId>net.yash</groupId>
+  		<artifactId>shoppingbackend</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+ 	</dependency>
+  
+  
+  	<!-- JUNIT -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency> 
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>3.8.1</version>
+	      <scope>test</scope>
+	 </dependency> 
      
      <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 		<dependency>

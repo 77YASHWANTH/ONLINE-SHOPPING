@@ -1,19 +1,31 @@
 package net.yash.onlineshopping.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.yash.shoppingbackend.dao.CategoryDAO;
+
 @Controller
 public class PageController {
+	
+	@Autowired
+	private CategoryDAO categoryDAO; //CategoryDAO interface from shoppingbackend..DAO package.
 	
 	@RequestMapping(value = {"/","/home","/index"})
 	public ModelAndView index(){
 		
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title","HOME");
+		
+		//Passing the list of categories
+		mv.addObject("categories", categoryDAO.list()); // categories is an arraylist used in CategoryDAOimpl 
+														//to return list of category objects	
+														//categoryDAO.list() method;
+		
 		mv.addObject("userClickHome",true);
 		return mv;
 	} 

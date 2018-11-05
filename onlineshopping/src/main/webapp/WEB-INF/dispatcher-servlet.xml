@@ -9,7 +9,13 @@
 	http://www.springframework.org/schema/mvc
    	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	
-   <context:component-scan base-package="net.yash.onlineshopping.controller"/> 
+	<!-- context:component-scan base-package="where to scan"  -->
+
+   <context:component-scan base-package="net.yash.onlineshopping.controller" /> 
+   <context:component-scan base-package="net.yash.shoppingbackend.daoimpl" /> 
+   
+   
+   
    
    <bean id="viewResolver"
    		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -12,6 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<spring.versions>4.3.6.RELEASE</spring.versions>
   </properties>
 
   <dependencies>
@@ -21,6 +22,16 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- Spring Dependency-->
+    <dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-context</artifactId>
+    		<version>4.3.6.RELEASE</version>
+	</dependency>
+    
+    
+    
   </dependencies>
   
   <build>
