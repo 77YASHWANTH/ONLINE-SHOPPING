@@ -51,4 +51,15 @@ public class CategoryDAOImpl implements CategoryDAO {
 		return categories;
 	}
 
+
+	@Override //abstract method from the CategoryDAO
+	public Category get(int id) {
+		//this method use for return the category based upon id which is called in page controller
+		
+		for(Category category : categories) {
+			if(category.getId()==id) return category;
+		}
+		return null;
+	}
+
 }

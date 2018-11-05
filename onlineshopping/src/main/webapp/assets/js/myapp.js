@@ -8,14 +8,16 @@ $(function(){
 	case 'CONTACT':
 		$('#contact').addClass('active');
 		break;
-	case 'VIEW PRODUCT':
-		$('#viewproduct').addClass('active');
+	case 'ALL PRODUCT':
+		$('#listProducts').addClass('active');
 		break;
 	case 'SERVICES':
 		$('#services').addClass('active'); 
 		break;
 	default:
 		$('#home').addClass('active');
+		$('a_'+menu).addClass('active'); // To know which category is Active
+	
 		break;
 	}
 	
