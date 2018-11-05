@@ -13,6 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<spring.versions>4.3.6.RELEASE</spring.versions>
+  	<hibernate.version>5.2.7.Final</hibernate.version>
   </properties>
 
   <dependencies>
@@ -28,8 +29,38 @@
     		<groupId>org.springframework</groupId>
     		<artifactId>spring-context</artifactId>
     		<version>4.3.6.RELEASE</version>
+	</dependency> 
+	
+	<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-orm</artifactId>
+    		<version>4.3.6.RELEASE</version>
 	</dependency>
     
+    
+    <!-- H2 Dependency -->
+     <dependency>
+    		<groupId>com.h2database</groupId>
+    		<artifactId>h2</artifactId>
+    		<version>1.4.193</version>
+	</dependency>
+    
+    <!-- Hibernate Dependency-->
+     
+     <dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-core</artifactId>
+    		<version>${hibernate.version}</version>
+	</dependency>
+    
+    <!-- Database Connection Pooling (a connection pool is a cache of database connections maintained so that the connections can be reused when future requests to the database are required.-->
+    <!-- Connection pools are used to enhance the performance of executing commands on a database. )-->
+    
+    <dependency>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>commons-dbcp2</artifactId>
+    		<version>2.1.1</version>
+	</dependency>
     
     
   </dependencies>
