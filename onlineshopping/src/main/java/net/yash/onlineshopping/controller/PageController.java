@@ -42,10 +42,10 @@ public class PageController {
 	@RequestMapping(value = {"/services"})
 	public ModelAndView services(){
 	
-	ModelAndView mv = new ModelAndView("page");
-	mv.addObject("title","SERVICES");
-	mv.addObject("userClickServices",true);
-	return mv;
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","SERVICES");
+		mv.addObject("userClickServices",true);
+		return mv;
 	} 
 	
 	@RequestMapping(value = {"/contact"})
@@ -128,7 +128,8 @@ public class PageController {
 		//Passing the list of categories
 		mv.addObject("categories", categoryDAO.list()); // categories is an arraylist used in CategoryDAOimpl 
 														//to return list of category objects	
-														//categoryDAO.list() method;
+									
+		System.out.println(categoryDAO.list());//categoryDAO.list() method;
 		mv.addObject("category",category);
 		
 		mv.addObject("userClickCategoryProducts",true);
