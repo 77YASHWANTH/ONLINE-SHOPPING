@@ -1,4 +1,4 @@
-package net.yash.shoppingbackend.test;
+/*package net.yash.shoppingbackend.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -26,8 +26,8 @@ public class CategoryTestCase {
 		
 		categoryDAO = (CategoryDAO)context.getBean("categoryDAO");
 	}
-	
-	@Test
+	*/
+	/*@Test*
 	public void testAddCategory() {
 		
 		category = new Category();
@@ -40,5 +40,44 @@ public class CategoryTestCase {
 		
 		
 	}
-
+	
+	
+	@Test
+	public void testGetCategory() {
+		category = categoryDAO.get(66); 
+		assertEquals("Category is Fetched successfully","REDMI",category.getName());
+		
+		
+	}
+	@Test
+	public void testUpdateCategory() {
+		category = categoryDAO.get(66);
+		category.setName("SAMSUNG");
+		assertEquals("successfully updated in the single category",true,categoryDAO.update(category)); 
+		
+		
+	}*/ 
+	
+	/*@Test
+	public void testUpdateCategory() {
+		category = categoryDAO.get(66);
+		assertEquals("successfully Deleted in the single category",true,categoryDAO.delete(category)); 
+		
+		
+	}*/ 
+	
+	/*@Test
+	public void testDeleteCategory() {
+		category = categoryDAO.get(66);
+		assertEquals("successfully Deleted in the single category",1,categoryDAO.list()); 
+		
+		}  */ 
+	
+	/*public void testListCategory() {
+		assertEquals("successfully fetched the list of categories in the single category",1,categoryDAO.delete(category)); 
+		
+		}  
+	
+	
 }
+*/
