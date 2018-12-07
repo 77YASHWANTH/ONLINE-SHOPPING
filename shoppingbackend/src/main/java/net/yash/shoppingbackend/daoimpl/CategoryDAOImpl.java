@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional; // ensure the import for transactional is org.springframework.transaction.annotation.Transactional;
 
-
 import net.yash.shoppingbackend.dao.CategoryDAO;
 import net.yash.shoppingbackend.dto.Category;
 
@@ -29,14 +28,14 @@ public class CategoryDAOImpl implements CategoryDAO {
 	//Fetch List
 	@Override 
 	public List<Category> list() {
-		return null;
+		//return null;
 		
-	/*	String selectActiveCategory = "FROM category WHERE active = :active";//Hql query ,category is an entity
+		String selectActiveCategory = "FROM Category WHERE active = :active";//Hql query ,category is an entity
 		
 		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory); //Hql query getting the session and selecting active category.
 		
 		query.setParameter("active", true);
-		return query.getResultList();*/
+		return query.getResultList();
 	}
 
 

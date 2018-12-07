@@ -8,13 +8,15 @@ $(function(){
 	case 'CONTACT':
 		$('#contact').addClass('active');
 		break;
-	case 'ALL PRODUCT':
+	case 'PRODUCTS':
 		$('#listProducts').addClass('active');
 		break;
 	case 'SERVICES':
 		$('#services').addClass('active'); 
 		break;
 	default:
+		if(menu=='home')
+			break;
 		$('#home').addClass('active');
 		$('a_'+menu).addClass('active'); // To know which category is Active
 	
