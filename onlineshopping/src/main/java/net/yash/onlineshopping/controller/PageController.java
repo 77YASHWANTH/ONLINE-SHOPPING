@@ -13,7 +13,8 @@ import net.yash.shoppingbackend.dto.Category;
 public class PageController {
 	
 	@Autowired
-	private CategoryDAO categoryDAO; //CategoryDAO interface from shoppingbackend..DAO package.
+	private CategoryDAO categoryDAO; //CategoryDAO interface from shoppingbackend..DAO package. 
+	//private ProductDAO productDAO;
 	
 	@RequestMapping(value = {"/","/home","/index"})
 	public ModelAndView index(){

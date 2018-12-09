@@ -27,101 +27,115 @@ public class CategoryTestCase {
 		categoryDAO = (CategoryDAO)context.getBean("categoryDAO");
 	}
 
-	@Test	
+	@Test
 	public void testCRUDCategory() {
 		
 		try {
-		//ADDING
+		// add operation
 		category = new Category();
 		
-		category.setName("REDMI");
-		category.setDescription("NEW REDMI");
+		category.setName("Laptop");
+		category.setDescription("This is some description for laptop!");
 		category.setImageUrl("CAT_1.png");
 		
-		assertEquals("Category is added successfully",true,categoryDAO.add(category));
-	
+		assertEquals("Error in added a category inside the table!",true,categoryDAO.add(category));
+		
+		
 		category = new Category();
 		
-		category.setName("NOKIA");
-		category.setDescription("NEW NOKIA");
+		category.setName("Television");
+		category.setDescription("This is some description for television!");
 		category.setImageUrl("CAT_2.png");
 		
-		assertEquals("Category is added successfully",true,categoryDAO.add(category));
-	
-		// UPDATE
+		assertEquals("Successfully added a category inside the table!",true,categoryDAO.add(category));
+
+		
+		// fetching and updating the category
 		category = categoryDAO.get(2);
-		category.setName("SAMSUNG");
-		assertEquals("successfully updated in the single category",true,categoryDAO.update(category)); 
 		
-		//DELETING
-		assertEquals("successfully Deleted in the single category",1,categoryDAO.list()); 
+		category.setName("TV");
 		
-		//FETCHING THE LIST 
-		assertEquals("successfully fetched the list of categories in the single category",1,categoryDAO.list().size()); 
+		assertEquals("Successfully updated a single category in the table!",true,categoryDAO.update(category));
 		
+		
+		// delete the category
+		assertEquals("Successfully deleted a single category in the table!",true,categoryDAO.delete(category));
+		
+		
+		//fetching the list
+		assertEquals("Successfully fetched the list of categories from the table!",1,categoryDAO.list().size());		
 		}
 		catch(Exception ex) {
 			ex.getStackTrace();
 		}
+		
 	}
 	
-}
 	
-	
-	
-	/*@Test*
+	/*	@Test
 	public void testAddCategory() {
 		
 		category = new Category();
 		
-		category.setName("REDMI");
-		category.setDescription("NEW REDMI");
-		category.setImageUrl("CAT_1.png");
+		category.setName("Laptop");
+		category.setDescription("This is some description for laptop!");
+		category.setImageURL("CAT_105.png");
 		
-		assertEquals("Category is added successfully",true,categoryDAO.add(category));
+		assertEquals("Successfully added a category inside the table!",true,categoryDAO.add(category));
 		
 		
 	}
+	*/
 	
-	
-	@Test
+/*	@Test
 	public void testGetCategory() {
-		category = categoryDAO.get(66); 
-		assertEquals("Category is Fetched successfully","REDMI",category.getName());
+		
+		category = categoryDAO.get(3);
+		
+		
+		assertEquals("Successfully fetched a single category from the table!","Television",category.getName());
 		
 		
 	}
-	@Test
-	public void testUpdateCategory() {
-		category = categoryDAO.get(66);
-		category.setName("SAMSUNG");
-		assertEquals("successfully updated in the single category",true,categoryDAO.update(category)); 
-		
-		
-	}*/ 
+	*/
 	
-	/*@Test
+/*	@Test
 	public void testUpdateCategory() {
-		category = categoryDAO.get(66);
-		assertEquals("successfully Deleted in the single category",true,categoryDAO.delete(category)); 
+		
+		category = categoryDAO.get(3);
+		
+		category.setName("TV");
+		
+		assertEquals("Successfully updated a single category in the table!",true,categoryDAO.update(category));
 		
 		
-	}*/ 
-	
-	/*@Test
+	}
+	*/
+
+/*	@Test
 	public void testDeleteCategory() {
-		category = categoryDAO.get(66);
-		assertEquals("successfully Deleted in the single category",1,categoryDAO.list()); 
 		
-		}  */  
-//@Test
-//public void testListCategory() {
-//	assertEquals("successfully fetched the list of categories in the single category",3,categoryDAO.list().size()); 
-//	} 
-//}
-
+		category = categoryDAO.get(3);		
+		assertEquals("Successfully deleted a single category in the table!",true,categoryDAO.delete(category));
+		
+		
+	}
+*/	
+/*	
+	@Test
+	public void testListCategory() {
+					
+		assertEquals("Successfully fetched the list of categories from the table!",3,categoryDAO.list().size());
+		
+		
+	}
+	
+*/
 	
 
+	
+		
+}
 	
 	  
 	
