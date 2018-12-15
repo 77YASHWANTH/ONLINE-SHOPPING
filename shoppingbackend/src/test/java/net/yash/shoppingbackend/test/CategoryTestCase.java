@@ -66,7 +66,7 @@ public class CategoryTestCase {
 		assertEquals("Successfully fetched the list of categories from the table!",1,categoryDAO.list().size());		
 		}
 		catch(Exception ex) {
-			ex.getStackTrace();
+			ex.printStackTrace();
 		}
 		
 	}
