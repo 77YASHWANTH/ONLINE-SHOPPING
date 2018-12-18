@@ -23,13 +23,13 @@ public class JsonDataController {
 	
 	
 	@RequestMapping("/all/products") 
-	@ResponseBody
+	@ResponseBody //by adding this annotation make this method asc json 
 	public List<Product> getAllProducts(){
 		return productDAO.listActiveProducts();
 	} 
 	
 	@RequestMapping("/category/{id}/products")
-	@ResponseBody
+	@ResponseBody //by adding this annotation make this method asc json 
 	public List<Product> getProductsByCategory(@PathVariable int id){
 		
 		return productDAO.listActiveProductsByCategory(id);

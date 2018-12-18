@@ -25,7 +25,10 @@
     <title>ESHOP</title> 
     
     <script>
-    	window.menu = '${title}';
+    	window.menu = '${title}'; 
+    	
+    	window.contextRoot = '${contextRoot}'
+    		
 	</script>
    
     <!-- Bootstrap Core CSS -->
@@ -33,15 +36,18 @@
     
    <!--   Simplex Theme //this has should be completed // video-part 02-8
 	<link href="${css}/bootstrap-simplex-theme.css" rel="stylesheet">
-	-->
+	-->  
+	
+	
+	<!-- Bootstrap DataTables -->
+	<link href="${css}/dataTables.bootstrap.css" rel = "stylesheet">
     
-    
+    <script type="text/javascript" href="https://cdn.datatables.net/plug-ins/1.10.19/api/average().js"></script>
     
     <!-- Custom CSS -->
 	<link href="${css}/myapp.css" rel="stylesheet"> 
 
-	
-
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"  rel = "stylesheet"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -84,7 +90,12 @@
 	   			
 	   			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
 	   				<%@include file="listProducts.jsp"%> 
+	   			</c:if> 
+	   			
+	   			<c:if test="${userClickShowProduct == true}">
+	   				<%@include file="singleProduct.jsp"%> 
 	   			</c:if>
+	   		
 	   		
 	   		
 	       </div>
@@ -101,7 +112,14 @@
 	    <!-- Bootstrap Core JavaScript -->
 	    <script src="${js}/bootstrap.min.js"></script> 
 	    
-	    <!-- MyAPP.js -->
+	   	<!-- DataTable Plugin-->
+	    <script src="${js}/jquery.dataTables.js"></script>
+		
+		<!-- DataTable Bootstrap Script-->
+	    <script src="${js}/dataTables.bootstrap.js"></script>
+		
+	      
+	    <!-- self code(MyAPP.js) -->
 		<script src="${js}/myapp.js"></script>
 		
 	</div>

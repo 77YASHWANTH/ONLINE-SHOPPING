@@ -43,7 +43,14 @@
 		<dependency>
    			<groupId>org.springframework</groupId>
     		<artifactId>spring-core</artifactId>
-    		<version>4.3.6.RELEASE</version>
+    		<version>4.3.6.RELEASE</version> 
+    		<!-- Adding for facade logging -->
+    		<exclusions>
+    			<exclusion>
+    				<groupId>commons-logging</groupId>
+    				<artifactId>commons-logging</artifactId>
+    			</exclusion>
+    		</exclusions>
 		</dependency>  
 	
 		<dependency>

@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Product {
 	
@@ -18,15 +20,22 @@ public class Product {
 	private String code;
 	private String name;
 	private String brand;
+	@JsonIgnore //By using this annotation we can ignore this attribute not to converting to json format. 
 	private String description;
 	@Column(name = "unit_price")
 	private double unitPrice;
 	private int quantity;
+	
 	@Column(name = "is_active")	
+	@JsonIgnore //By using this annotation we can ignore this attribute not to converting to json format. 
 	private boolean active;
+	
 	@Column(name = "category_id")
+	@JsonIgnore //By using this annotation we can ignore this attribute not to converting to json format. 
 	private int categoryId;
+	
 	@Column(name = "supplier_id")
+	@JsonIgnore //By using this annotation we can ignore this attribute not to converting to json format. 
 	private int supplierId;
 	private int purchases;
 	private int views;

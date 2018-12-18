@@ -1,26 +1,44 @@
 package net.yash.onlineshopping.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.yash.onlineshopping.exception.ProductNotFoundException;
 import net.yash.shoppingbackend.dao.CategoryDAO;
+import net.yash.shoppingbackend.dao.ProductDAO;
 import net.yash.shoppingbackend.dto.Category;
+import net.yash.shoppingbackend.dto.Product;
+
+
 
 @Controller
 public class PageController {
 	
+	//this is for logger class
+	private static final Logger logger = LoggerFactory.getLogger(PageController.class);
+	
 	@Autowired
 	private CategoryDAO categoryDAO; //CategoryDAO interface from shoppingbackend..DAO package. 
-	//private ProductDAO productDAO;
+	
+	
+	@Autowired
+	private ProductDAO productDAO; //ProductDAO interface from shoppingbackend..DAO package. 
+	
+	
 	
 	@RequestMapping(value = {"/","/home","/index"})
 	public ModelAndView index(){
 		
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title","HOME");
+		mv.addObject("title","HOME"); 
+		
+		logger.info("Inside PageController index method - INFO");
+		logger.debug("Inside PageController index method - DEBUG");
 		
 		//Passing the list of categories
 		mv.addObject("categories", categoryDAO.list()); // categories is an arraylist used in CategoryDAOimpl 
@@ -58,41 +76,7 @@ public class PageController {
 		return mv;
 	} 
 	
-	/*@RequestMapping(value = {"/viewproduct"})
-	public ModelAndView viewproduct(){
-		
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title","VIEW PRODUCT");
-		mv.addObject("userClickViewProduct",true);
-		return mv;
-	} */
-	
-
-/*	//Request param  .... onlineshopping/test?greeting=process is success
-	@RequestMapping(value="/test")
-	public ModelAndView test(@RequestParam(value="greeting",required=false)String greeting){
-		if(greeting==null) {
-			greeting = "Page Is Under The Construction";
-		}
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting",greeting); 
-		return mv;
-	}
-	
-	
-	//PathVariable ..... onlineshopping/test/what ever u type here it will passed as greeting to the pagecontroller
-
-	@RequestMapping(value="/test/{greeting}")
-	public ModelAndView test(@PathVariable("greeting")String greeting){
-		if(greeting==null) {
-			greeting = "Page Is Under The Construction";
-		}
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting",greeting); 
-		return mv;
-	}*/
-	
-	/* 
+		/* 
 	 * Methods to load all the products and based on category.
 	 */
 	
@@ -135,8 +119,34 @@ public class PageController {
 		
 		mv.addObject("userClickCategoryProducts",true);
 		return mv;
-	} 
+	}   
 	
+	// viewing Single Product
+	
+	@RequestMapping(value = "/show/{id}/product") 
+	public ModelAndView showSingleProduct(@PathVariable int id) throws ProductNotFoundException{
+		
+		ModelAndView mv = new ModelAndView("page");
+		
+		Product product = productDAO.get(id);
+		
+		if(product == null)throw new ProductNotFoundException(); 
+		
+		// update the view count
+		product.setViews(product.getViews() + 1);
+		productDAO.update(product);
+		//---------------------------
+		
+		mv.addObject("title", product.getName());
+		mv.addObject("product", product);
+		
+		mv.addObject("userClickShowProduct", true);
+		
+		
+		return mv;
+		
+	}
+
 	
 }
 
