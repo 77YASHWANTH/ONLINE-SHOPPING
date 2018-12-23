@@ -14,10 +14,14 @@ $(function(){
 	case 'SERVICES':
 		$('#services').addClass('active'); 
 		break;
+	case 'Manage Proudcts':
+		$('#manageProducts').addClass('active'); 
+		break;
+
 	default:
 		if(menu=='home')
 			break;
-		$('#home').addClass('active');
+		$('#listProducts').addClass('active');
 		$('a_'+menu).addClass('active'); // To know which category is Active
 	
 		break;
@@ -110,5 +114,18 @@ $(function(){
 		
 	
 	
+	} 
+	
+	//dismissing the alert after 3 seconds 
+	var $alert = $('.alert');
+	if($alert.length){
+		setTimeout(function(){
+			$alert.fadeOut('slow')
+		},3000)
 	}
+	
+	
+	
+	
+	
 });

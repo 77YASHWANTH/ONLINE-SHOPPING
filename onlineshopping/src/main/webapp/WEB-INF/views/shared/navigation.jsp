@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="${contextRoot}/home">SHOP-HERE</a>
+                <a class="navbar-brand" href="${contextRoot}/home">LETS DEAL</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -24,7 +24,11 @@
                     </li> 
                     <li id="listproducts">
                     	<a href="${contextRoot}/show/all/products">Products</a>
+                    </li> 
+                    <li id="manageProducts">
+                    	<a href="${contextRoot}/manage/products">Manage Products</a>
                     </li>
+               
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

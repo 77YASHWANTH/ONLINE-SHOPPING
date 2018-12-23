@@ -7,6 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,13 +22,24 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String code;
-	private String name;
-	private String brand;
+	
 	@JsonIgnore //By using this annotation we can ignore this attribute not to converting to json format. 
+	private String code;
+	
+	@NotBlank(message = "Please Enter The Product Name!")
+	private String name;
+	
+	@NotBlank(message = "Please Enter The Brand Name")
+	private String brand;
+	
+	
+	@NotBlank(message = "Please Enter The Description")
 	private String description;
+	
 	@Column(name = "unit_price")
+	@Min(value=1,message = "Price Cannot Be Less Than 1!")
 	private double unitPrice;
+	@Column
 	private int quantity;
 	
 	@Column(name = "is_active")	
@@ -37,8 +53,25 @@ public class Product {
 	@Column(name = "supplier_id")
 	@JsonIgnore //By using this annotation we can ignore this attribute not to converting to json format. 
 	private int supplierId;
+	
+	@JsonIgnore //By using this annotation we can ignore this attribute not to converting to json format. 
 	private int purchases;
-	private int views;
+	
+	@JsonIgnore //By using this annotation we can ignore this attribute not to converting to json format. 
+	private int views; 
+	
+	@Transient
+	private MultipartFile file; 
+	
+	
+	
+	
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
 	
 	//Default Constructor 
 	public Product() { // using for creating random id
@@ -118,5 +151,15 @@ public class Product {
 		this.views = views;
 	}
 	
-
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="
+				+ description + ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", active=" + active
+				+ ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", purchases=" + purchases + ", views="
+				+ views + "]";
+	}
+	
+	
+	
+	
 }

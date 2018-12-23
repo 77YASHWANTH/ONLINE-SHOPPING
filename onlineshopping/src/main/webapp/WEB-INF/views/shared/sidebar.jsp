@@ -1,6 +1,6 @@
  
  
- <p class="lead">Shop-Here</p>
+ <p class="lead">Lets Deal</p>
                 
         <div class="list-group">
            <c:forEach items="${categories}" var="category1" >
