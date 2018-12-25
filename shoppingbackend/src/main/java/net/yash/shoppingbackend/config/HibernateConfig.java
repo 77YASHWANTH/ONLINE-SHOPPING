@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfig<Datasource> { 
 	
 	//These are Database status-change the below based on the DBMS you choose
-	private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/onlineshopping77";
+	private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/onlineshopping007";
 	private final static String DATABASE_DRIVER = "org.h2.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.H2Dialect";
 	private final static String DATABASE_USERNAME = "sa";
@@ -65,7 +65,8 @@ public class HibernateConfig<Datasource> {
 		
 		properties.put("hibernate.dialect", DATABASE_DIALECT);
 		properties.put("hibernate.show_sql", "true");
-		properties.put("hibernate.format_sql", "true");
+		properties.put("hibernate.format_sql", "true"); 
+		properties.put("hibernate.hbm2ddl.auto","update");
 		
 		return properties;
 	} 

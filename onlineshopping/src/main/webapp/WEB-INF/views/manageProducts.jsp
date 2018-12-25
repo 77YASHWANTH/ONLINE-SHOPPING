@@ -126,8 +126,92 @@
 
 	</div>
 
-			
+		<div class="row">
+				
+		
+		<div class='col-xs-12'>
+				<h3>Avaialble products</h3> 
+				</hr>
 		</div>
+		
+			<!-- Products table for admin -->
+			<table id="adminproductsTable" class="table table-condensed table-bordered">
+							
+				<thead>					
+					<tr>					
+						<th>Id</th>
+						<th>&#160;</th>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Qty. Avail</th>
+						<th>Unit Price</th>
+						<th>Activate</th>				
+						<th>Edit</th>
+					</tr>					
+				</thead> 
+				
+				<tbody>
+					<tr> 
+						<td>4</td>					
+						<td>
+							<img class = "adminDataTableImg" src="${contextRoot}/resources/images/PRDDEF123DEFX.jpg" alt="Samsung Galaxy S7">
+						</td> 
+						<td>Samsung Galaxy S7</td>
+							<td>Samsung</td>
+		
+						<td>3</td> 
+						<td>&#8377; 54000.00/-</td> 
+						<td>
+							<!-- toggle Switch -->
+							
+							<label class="switch">
+  							<input type="checkbox">
+ 							 <span class="slider round"></span>
+							</label>
+							
+								</td> 
+						<td>
+							<a href="${contextRoot}/manage/4/product" class = "btn btn-warning">
+								<span class="glyphicon glphicon-pencil"></span>
+							</a>
+						
+						</td>
+						
+					</tr>
+				
+			
+		
+		
+		
+				</tbody>
+				
+				<tfoot>
+					<tr>					
+						<th>Id</th>
+						<th>&#160;</th>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Qty. Avail</th>
+						<th>Unit Price</th>
+						<th>Activate</th>				
+						<th>Edit</th>
+					</tr>									
+				</tfoot>
+				
+							
+			</table>
+		
+		
+		</div>
+	
+	
+	</div>
+	
+
+
+
+			
+</div>
 	
 	
 	
