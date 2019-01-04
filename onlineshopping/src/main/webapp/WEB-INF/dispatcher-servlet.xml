@@ -12,7 +12,6 @@
 	<!-- context:component-scan base-package="where to scan"  -->
 
    <context:component-scan base-package="net.yash.onlineshopping" /> 
-   <context:component-scan base-package="net.yash.shoppingbackend" /> 
    
    
    

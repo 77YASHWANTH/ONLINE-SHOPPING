@@ -31,7 +31,7 @@ public class HibernateConfig<Datasource> {
 	
 	//Three Main Bean DataSource,SessionFactory,HibernateTransactionManager
 	
-	@Bean //DataSource (providing the connection information of the database.
+	@Bean("dataSource") //DataSource (providing the connection information of the database.
 	public DataSource getDataSource() {
 		
 		BasicDataSource dataSource = new BasicDataSource();
