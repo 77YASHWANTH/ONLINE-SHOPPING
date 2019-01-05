@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.yash.onlineshopping.exception.ProductNotFoundException;
@@ -146,6 +147,62 @@ public class PageController {
 		return mv;
 		
 	}
+	//Having Similar Mapping To Our Flow ID
+		@RequestMapping(value = {"/register"})
+		public ModelAndView register(){
+			
+			ModelAndView mv = new ModelAndView("page");
+			mv.addObject("title","ABOUT US");
+			return mv;
+		}  
+		
+		/* Login */
+		@RequestMapping(value = "/login")
+		public ModelAndView login(@RequestParam(name="error",required=false)String error){
+			
+			ModelAndView mv = new ModelAndView("login");
+			
+			if(error!=null) {
+				mv.addObject("message","INVALID USER NAME AND PASSWORD ");
+			}
+//			if(logout!=null) {
+//				mv.addObject("logout","User has Successfully logged out!");
+//			}
+//			
+			mv.addObject("title","login");
+			
+			return mv;
+			} 
+		
+		//Access denied Page
+		@RequestMapping(value = "/access-denied")
+		public ModelAndView accessDenied(){
+			
+			ModelAndView mv = new ModelAndView("error");
+			
+			mv.addObject("title","Access Denied");
+			mv.addObject("errorTitle","Access Denied");
+			mv.addObject("errorDescription","Access Denied");
+			
+			return mv;
+			} 
+		
+//		//Logout
+//		@RequestMapping(value = "/perform-logout")
+//		public String logout(HttpServletRequest request,HttpServletResponse response){
+//			//fetch the authentication  
+//			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//			
+//			if(auth!=null) {
+//				new SecurityContextLogoutHandler().logout(request,response,auth);
+//			} 
+//			
+//			return "redirect:/login?logout";
+//		
+//		
+//		} 
+
+		
 
 	
 }

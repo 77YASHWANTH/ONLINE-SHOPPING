@@ -21,11 +21,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="_csrf" content="">
-    <meta name="_csrf_header" content="${_csrf.headerName}" >
-    
 
-    <title>Lets Deal - ${title}</title> 
+    <title>ESHOP</title> 
     
     <script>
     	window.menu = '${title}'; 
@@ -68,65 +65,104 @@
 	
 	
 	    <!-- Navigation -->
-	    	<%@include file="./shared/navigation.jsp"  %> 
+	    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	    	<div class="container">
+	    		<!-- brand and toggle get grouped for better mobile --> 
+	    		<div class="navbar-header">
+	    			<a class="nav-brand" href="${contextRoot}/home">LETS DEAL</a>
+	    		</div>
 	    	
+	    	</div>
+	    
+	    
+	    </nav>
 	    	
 	    <!-- Page Content -->
 	    	
-	    	<div class="content">
-	    	
-	    		<!-- Home  Content -->
-	    		<c:if test="${userClickHome == true}">
-	   				<%@include file="home.jsp"%> 
-	   			</c:if>
-	   		
-	       
-	       		<c:if test="${userClickAbout == true}">
-	   				<%@include file="about.jsp"%> 
-	   			</c:if>
-	   		
-	       
-	        	<c:if test="${userClickContact == true}">
-	   				<%@include file="contact.jsp"%> 
-	   			</c:if>
-	   		
-	   			
-	   			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
-	   				<%@include file="listProducts.jsp"%> 
-	   			</c:if> 
-	   			
-	   			<c:if test="${userClickShowProduct == true}">
-	   				<%@include file="singleProduct.jsp"%> 
-	   			</c:if>
-	   			
-	   			<c:if test="${userClickManageProducts == true}">
-	   				<%@include file="manageProducts.jsp"%> 
-	   			</c:if>
-	   			
-	   		
-	   		
-	       </div>
+<div class="content">
+	
+	<div  class="container">    
+		<!-- login details is wrong this will execute -->
+		<c:if test="${not empty message}">
+			<div class="row">
+     
+     			<div class="col-md-offset-3 col-md-6">
+    				
+    				<div class="alert alert-danger">
+    					${message}
+    				</div>
+    				
+			</div> 
+		</div>
+			
+		</c:if>
+	
+		
+	<div class="row">
+     
+     <div class="col-md-offset-3 col-md-6">
+      
+      <div class="panel panel-primary">
+       
+       <div class="panel-heading">
+        <h4>Login</h4>
+       </div>
+       
+       <div class="panel-body">
+        <form action="${contextRoot}/login" method="POST" class="form-horizontal"
+         id="loginForm"
+        >
+         <div class="form-group">
+          <label for="username" class="col-md-4 control-label">Email: </label>
+          <div class="col-md-8">
+           <input type="text" name="username" id="username" class="form-control"/>
+          </div>
+         </div>
+       
+		 <div class="form-group">
+          <label for="password" class="col-md-4 control-label">Password: </label>
+          <div class="col-md-8">
+           <input type="password" name="password" id="password" class="form-control"/>
+          </div>
+         </div>
+        
+         <div class="form-group">
+          <div class="col-md-offset-4 col-md-8">
+           <input type="submit" value="Login" class="btn btn-primary"/>
+          	<input type="hidden" name="${_csrf.parameterName}" value = "${_csrf.token}"/>
+          </div>
+         </div>
+        </form>
+       
+       </div>
+       <div class="panel-footer">
+       	<div class="text-right">
+       		New User - <a href="${contextRoot}/register">Register Here</a>
+       	</div>
+       </div>
+      
+      </div> 
+    
+     </div>
+   
+	</div> 
+</div>
 	       <!-- /.container -->
 		
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp" %>
 	       
-	     <!-- /.container -->
-	
+	    
 	    <!-- jQuery -->
 	    <script src="${js}/jquery.js"></script>
 	
 	    <!-- Bootstrap Core JavaScript -->
 	    <script src="${js}/bootstrap.min.js"></script> 
 	    
-	   	<!-- DataTable Plugin-->
-	    <script src="${js}/jquery.dataTables.js"></script>
-		
+	  
 		<!-- DataTable Bootstrap Script-->
 	    <script src="${js}/dataTables.bootstrap.js"></script>
 		
-	    <!--BootBox -->
-	    <script src="${js}/bootbox.min.js"></script>
 	    
 	      
 	    <!-- self code(MyAPP.js) -->

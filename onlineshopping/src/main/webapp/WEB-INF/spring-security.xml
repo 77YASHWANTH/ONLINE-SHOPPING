@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd">
 		
-		
+		<http pattern="/resources/**" security="none" />
 		
 		 <context:component-scan base-package="net.yash.shoppingbackend" /> 
   
@@ -17,8 +17,14 @@
 			
 		<http>
 				<!-- Spring Security Who Can  Access-->
-				<intercept-url pattern="/**" access="hasAuthority('USER')" /> 
-				<form-login />
+					<!-- Admin Access -->
+				<intercept-url pattern="/manage/**" access="hasAuthority('ADMIN')"/>
+					<!-- User access -->
+				<intercept-url pattern="/cart/**" access="hasAuthority('USER')"/>
+					<!-- Other Type Of user -->
+				<intercept-url pattern="/**" access="permitAll" /> 
+				<form-login login-page="/login" />
+				<access-denied-handler error-page="/access-denied" />
 				<logout /> 
 	
 		</http>	
