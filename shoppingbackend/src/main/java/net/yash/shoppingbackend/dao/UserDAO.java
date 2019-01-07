@@ -2,6 +2,8 @@ package net.yash.shoppingbackend.dao;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+
 import net.yash.shoppingbackend.dto.Address;
 import net.yash.shoppingbackend.dto.Cart;
 import net.yash.shoppingbackend.dto.User;

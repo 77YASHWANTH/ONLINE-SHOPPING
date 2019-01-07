@@ -9,11 +9,11 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd">
 		
-		<http pattern="/resources/**" security="none" />
 		
 		 <context:component-scan base-package="net.yash.shoppingbackend" /> 
-  
-		
+  		
+  				
+		<http pattern="/resources/**" security="none" />
 			
 		<http>
 				<!-- Spring Security Who Can  Access-->
